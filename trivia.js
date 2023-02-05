@@ -7,18 +7,17 @@ let currentQuestion= null
 let currentCategory= null
 let rightAns
 function renderQuestion(){
-    let randomNum = parseInt(Math.random()*result.length)
+    let randomNum = parseInt(Math.random() * result.length)
     let del = result.splice(randomNum,1)
-    currentQuestion = del[0]
+   currentQuestion = del[0]
     console.log(currentQuestion.question)
-    let p1 = document.getElementById("category")
-    let p2 = document.getElementById("question")
-    p1.innerHTML = currentQuestion.category
 
-  
-    
-   
-   
+    let h3= document.getElementById("category")
+    let h2 = document.getElementById("question")
+    h3.innerHTML = currentQuestion.category
+    h2.innerHTML = currentQuestion.question
+
+
    
     //answers
    
@@ -56,16 +55,16 @@ xhr.open('GET',url)
  
 xhr.onload =function() {
     result = JSON.parse(xhr.responseText)
-  //  console.log(result)
+    console.log(result)
    
  
    
  
  
-    nextBtn.onclick = function(){
+    // nextBtn.onclick = function(){
      
-        renderQuestion()
-    }
+    //     renderQuestion()
+    // }
    
    
  
@@ -76,7 +75,7 @@ xhr.onload =function() {
 xhr.send()
 
 // different method
-// const url1 =""
+// const url1 ="https://the-trivia-api.com/api/questions"
 // async function getTrivia(){
 //     let response = await fetch(url);
 //     let data = await response.json();
