@@ -3,8 +3,8 @@ let nextBtn = document.querySelector('.nextBtn')
 let result=[]
 let category=[]
 let questionPage=document.querySelector('.page')
-let currentQuestion = null
-let currentCategory = null
+let currentQuestion= null
+let currentCategory= null
 let rightAns
 function renderQuestion(){
     let randomNum = parseInt(Math.random()*result.length)
@@ -14,7 +14,9 @@ function renderQuestion(){
     let p1 = document.getElementById("category")
     let p2 = document.getElementById("question")
     p1.innerHTML = currentQuestion.category
-    p2.innerHTML = currentQuestion.question
+
+  
+    
    
    
    
@@ -24,7 +26,7 @@ function renderQuestion(){
     for (let i = 0;i < 4;i++){
         let index = 1+i
         const currentChoices = [currentQuestion.correctAnswer,...currentQuestion.incorrectAnswers]
-       // console.log(`answer${index}`)
+     //   console.log(`answer${index}`)
        document.getElementById(`answer${index}`).innerHTML = currentChoices[i]
         //document.getElementById("answer1").innerText = currentChoices[0]
         let correctButton = document.getElementById("answer1")
@@ -43,6 +45,9 @@ function renderQuestion(){
        
     }
 }
+
+
+//call api using xmlHttpRequest->get trivia
 let url = ' https://the-trivia-api.com/api/questions'
  
 const xhr = new XMLHttpRequest()
@@ -51,7 +56,7 @@ xhr.open('GET',url)
  
 xhr.onload =function() {
     result = JSON.parse(xhr.responseText)
-    console.log(result)
+  //  console.log(result)
    
  
    
@@ -69,3 +74,12 @@ xhr.onload =function() {
  
  
 xhr.send()
+
+// different method
+// const url1 =""
+// async function getTrivia(){
+//     let response = await fetch(url);
+//     let data = await response.json();
+//     return data;
+// }
+// getTrivia().then((data) => console.log(data.results));
