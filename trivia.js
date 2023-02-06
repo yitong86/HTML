@@ -6,11 +6,41 @@ let questionPage=document.querySelector('.page')
 let currentQuestion= null
 let currentCategory= null
 let rightAns
+let currentChoices
+
+//call api using xmlHttpRequest->get trivia
+let url = ' https://the-trivia-api.com/api/questions'
+ 
+const xhr = new XMLHttpRequest()
+//console.log(xhr)
+xhr.open('GET',url)
+ 
+xhr.onload =function() {
+    result = JSON.parse(xhr.responseText)
+    console.log(result)
+   
+ 
+   
+ 
+ 
+    nextBtn.onclick = function(){
+     
+        renderQuestion()
+    }
+   
+   
+ 
+ 
+}
+ 
+ 
+xhr.send()
+
 function renderQuestion(){
     let randomNum = parseInt(Math.random() * result.length)
     let del = result.splice(randomNum,1)
    currentQuestion = del[0]
-    console.log(currentQuestion.question)
+   // console.log(currentQuestion.question)
 
     let h3= document.getElementById("category")
     let h2 = document.getElementById("question")
@@ -46,36 +76,10 @@ function renderQuestion(){
 }
 
 
-//call api using xmlHttpRequest->get trivia
-let url = ' https://the-trivia-api.com/api/questions'
- 
-const xhr = new XMLHttpRequest()
-//console.log(xhr)
-xhr.open('GET',url)
- 
-xhr.onload =function() {
-    result = JSON.parse(xhr.responseText)
-    console.log(result)
-   
- 
-   
- 
- 
-    // nextBtn.onclick = function(){
-     
-    //     renderQuestion()
-    // }
-   
-   
- 
- 
-}
- 
- 
-xhr.send()
+
 
 // different method
-// const url1 ="https://the-trivia-api.com/api/questions"
+// const url1 =""
 // async function getTrivia(){
 //     let response = await fetch(url);
 //     let data = await response.json();

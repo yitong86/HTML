@@ -1,0 +1,59 @@
+HTML
+
+1,HOME PAGE
+2,GAME PAGE
+3,register page
+
+Use at least 10 different HTML tags
+<form>
+<label>
+<p>
+<h>
+<button>
+<input>
+<div>
+<br>
+<center>
+<span>
+
+Use HTML tables
+
+Implement at least two uses for forms
+
+Dropped Down Menu 
+user chose state
+Use web fonts
+
+Use different types of content in the form of text, images, videos, and GIFs
+
+Use regex validation
+
+CSS
+
+Inline, internal, and external styling
+Use five different CSS selectors
+Don’t use too many fonts
+Use colors that complement each other
+Use Flexbox (Optional)
+Use SASS/SCSS (Optional)
+Use animations (Optional)
+
+
+Javascript
+
+External scripts
+Use variables, if statements, loops, at least one form of collections, functions/call back, and events.
+ renderQuestion();
+useful API  https://the-trivia-api.com/api/questions
+let results=[]
+let nextBtn = document.querySelector('.nextBtn')
+ let category=[]
+ let questionPage=document.querySelector('.page')
+let currentQuestion= null
+let currentCategory= null
+let rightAns
+let currentChoices
+
+Use AJAX (Optional) 
+Use JSON or XML (Optional)
+Use JQuery (Optional)

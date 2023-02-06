@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div>
-        <h2>
+ 
+    <div class="container"> 
+      
+    <div id ="trivia" class ="justify-center flex-column">
+    
+        <h2 >
             Question is : <span id="question"></span>
         </h2>
-        <h3>Category is : <span id ="category"></span></h3>
-    </div>
+        <h3 >Category is : <span id ="category"></span></h3>
+    
+    <div class ="answer_container">
+    <P>A
+        <button id ="answer1" value=""></button>
+    </P>
+        <br>
+       
+        <P>B
+        <button id ="answer2" value=""> </button>
+    </P>
+        <br>
+        
+        <P>C
+        <button id ="answer3" value=""> </button>
+    </P>
+        <br>
+        <P>D <button id ="answer4" value=""> </button></P> 
+      
+        <br>
+        <br>
+</div>
+<div class="page_start">
+    <button class="nextBtn">Submit</button>
+</div>
+
     <script src="trivia1.js"></script>
+</div>
+</div>
 </body>
 </html>

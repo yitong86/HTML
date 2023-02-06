@@ -1,26 +1,34 @@
-// const url ="https://the-trivia-api.com/api/questions"
 
-// async function getTrivia(){
-//     let response = await fetch(url);
-//     let data = await response.json();
-//     return data;
-// }
-// getTrivia().then((data) =>{
-//     // const results = data.results;
-//     console.log(data.results);
-//     // document.getElementById("question").innerHTML = results.question;
-//     // document.getElementById("category").innerHTML = results.category;
-// }
-// )
+let results=[]
+let nextBtn = document.querySelector('.nextBtn')
+ let category=[]
+ let questionPage=document.querySelector('.page')
+let currentQuestion= null
+let currentCategory= null
+let rightAns
+let currentChoices
 
-let result=[]
+function renderQuestion(){
+    let randomNum = parseInt(Math.random() * result.length)
+   // console.log(randomNum)
+   let del = result.splice(randomNum,1)
+   currentQuestion = del[0]
+   //console.log(currentQuestion.question)
 
+    // let h3= document.getElementById("category")
+    // let h2 = document.getElementById("question")
+    // h3.innerHTML = currentQuestion.category
+    // h2.innerHTML = currentQuestion.question
+   
+   
+}
+   
 
 //call api using xmlHttpRequest->get trivia
 let url = ' https://the-trivia-api.com/api/questions'
  
 const xhr = new XMLHttpRequest()
-//console.log(xhr)
+console.log(xhr)
 xhr.open('GET',url)
  
 xhr.onload =function() {
@@ -31,17 +39,45 @@ xhr.onload =function() {
     document.getElementById("question").innerHTML = results.question;
     document.getElementById("category").innerHTML = results.category;
    
- 
- 
+     currentChoices = [...results.incorrectAnswers,results.correctAnswer];
+    console.log(currentChoices)
+
+    renderQuestion();
+
+    // nextBtn.onclick = function(){
+     
+    //     renderQuestion()
+    // }
+
+
+    for (let i = 0;i < 4;i++){
+        let index = 1+i
+     //  console.log(`answer${index}`)
+      document.getElementById(`answer${index}`).innerHTML = currentChoices[i]
+     document.getElementById(`answer${index}`).value = currentChoices[i]
+      let correctButton = document.getElementById("answer1")
+              correctButton.onclick = function(){
+                     alert("Correct")
+              }
+              for (let i=2;i<5;i++){
+            let incorrectButton = document.getElementById(`answer${[i]}`)
+       
+                  incorrectButton.onclick = function(){
+                      alert("Incorrect")
+                  }
+               renderQuestion(results);
+
+
     // nextBtn.onclick = function(){
      
     //     renderQuestion()
     // }
    
    
- 
+              }
  
 }
  
- 
+}
 xhr.send()
+
