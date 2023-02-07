@@ -5,70 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="registerForm.css"/>
 </head>
 <body>
-    <h1>Register Page</h1>
+    <h1>Register Form</h1>
+
+    <div class="form-container">
     <form>
-    <div>
-        <label>
-            First Name
-        </label>
-        <input type = "text" placeholder="Enter your First Name"/>
+        <div class="input_container">
+        <label for="userName"> Full Name</label>
+        <input id ="userName" type = "text" placeholder="Enter your Full Name" />
     </div>
-    <div>
-        <label>
-            Last Name
-        </label>
-        <input type = "text" placeholder="Enter your Last Name"/>
+    <div class="input_container">
+        <label for="phone"> Phone number</label>
+        <input id ="phone" type = "text" placeholder="Enter your phone number"/>
     </div>
-    <div>
-        <label>
-            Email
-        </label>
-        <input type = "text" placeholder="Enter your Email"/>
+    <div class="input_container">
+        <label for="zipcode"> ZipCode</label>
+        <input id ="zipcode" type = "text" placeholder="Enter your Zip Code"/>
     </div>
-    <div>
-        <label>
-            Password
-        </label>
-        <input type = "text" placeholder="Enter your Password"/>
+    <div class="input_container">
+        <label for="email"> Email</label>
+        <input id ="email" type = "text" placeholder="Enter your email"/>
     </div>
-    <div>
-        <label>
-            Confirm Password
-        </label>
-        <input type = "text" placeholder="Confirm your Password"/>
+    <div class="input_container">
+        <label for="password"> Password</label>
+        <input id ="password" type = "text" placeholder="Enter your password"/>
     </div>
-    <div>
-        <label>
-            Gender
-        </label>
+
+    <div  class="input_container">
+        <label for ="gender">Gender </label>
         <input type = "radio" name = "Gender">Female
         <input type = "radio" name = "Gender">Male
     </div>
-    <div>
-        <label>
-            Date Of Birth
-        </label>
-        <input type = "text" placeholder="mm/dd/yyyy"/>
-    </div>
-    <div>
-        <label>State</label>
+
+    <div class="input_container">
+        <label for ="state">State</label>
         <select>
             <option>Boston</option>
             <option>RI</option>
             <option>New York</option>
         </select>
     </div>
-    <div>
-        <label>
-           Habits
-        </label>
-        <input type = "radio" name = "Habits">You like sports
-        <input type = "radio" name = "Habits">You like history
-        <input type = "radio" name = "Habits">You like music
-    </div>
+    
+
+  <input type="submit" value ="submit" class = "btn red" id="submitBtn"/>
 </form>
-    <button>Register</button>
+</div>
+<script src="validation.js"></script>
 </body>
+
 </html>
